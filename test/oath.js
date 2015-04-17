@@ -82,7 +82,7 @@ describe('oath', function () {
     };
 
     var promised = oath.promisify(nodeStyle);
-    xit('should call then on success', function (done) {
+    it('should call then on success', function (done) {
       promised(bigEnough)
         .then(function (message) {
           expect(message).to.equal('That\'s a big number!');
@@ -90,7 +90,7 @@ describe('oath', function () {
         });
     });
 
-    xit('should call catch on error', function (done) {
+    it('should call catch on error', function (done) {
       promised(tooSmall)
         .catch(function (message) {
           expect(message).to.equal('Not big enough!');
@@ -100,7 +100,7 @@ describe('oath', function () {
   });
 
   describe('chaining', function () {
-    it('should allow you to chain promises using then', function (done) {
+    xit('should allow you to chain promises using then', function (done) {
       var step1 = function (num) {
         return promiseTimeout(function () {
           return num + 10;
@@ -119,7 +119,7 @@ describe('oath', function () {
       });
     });
 
-    it('should jump directly to catch if an error is thrown during chaining', function (done) {
+    xit('should jump directly to catch if an error is thrown during chaining', function (done) {
       var step1 = function (num) {
         return promiseTimeout(function () {
           return num + 10;
